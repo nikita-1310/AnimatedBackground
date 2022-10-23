@@ -1,0 +1,42 @@
+*{
+margin :0;
+padding : 0;
+box-sizing : boder-box;
+}
+body{
+    min-height: 100vh;
+    background: #0c192c;
+}
+.container{
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+.bubbles{
+    position: relative;
+    display: flex;
+}
+.bubbles span{
+    position: relative;
+    width: 30px;
+    height: 30px;
+    background: #d83d09;
+    margin: 0 2px;
+    border-radius: 50%;
+    box-shadow: 0 0 0 10px #963818, 0 0 50px #d83d09, 0 0 100px #d83d09;
+    animation: animate 15s linear infinite;
+    animation-duration: calc(125s / var(--i));
+}
+.bubbles span:nth-child(even){
+    background: #f3e336;
+    box-shadow: 0 0 0 10px #dccd22, 0 0 50px #f3e336, 0 0 100px #f3e336;
+}
+@keyframes animate {
+    0%{
+        transform: translateY(100vh) scale(0);
+    }
+    100%{
+        transform: translateY(-10vh) scale(1);
+    }
+}
